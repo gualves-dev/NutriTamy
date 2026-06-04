@@ -1,0 +1,618 @@
+:root {
+    --backgroundmain: white;
+    --backgroudsecond: #2e5a36;
+    --fonte-principal: 'Inter', sans-serif;
+}
+
+* {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Previne quebras de layout */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Tela de fundo do carregamento */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fafdff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.svg-container {
+    width: 80%;
+    max-width: 500px;
+}
+
+.letra {
+    font-size: 5.5rem;
+    fill: url(#gradienteNutri);
+    fill-opacity: 0;
+    stroke: url(#gradienteNutri);
+    stroke-width: 2;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation:
+        desenharContorno 2.5s ease-in-out forwards,
+        surgirFundoSuave 1.5s ease-in-out 2s forwards;
+}
+
+@keyframes desenharContorno {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes surgirFundoSuave {
+    from { fill-opacity: 0; }
+    to { fill-opacity: 1; }
+}
+
+/* SITE MAIN  */
+nav {
+    background-color: var(--backgroundmain);
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(to right, green, orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav a {
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.2s ease-in;
+    border-bottom: 2px solid transparent;
+    padding: 5px;
+}
+
+nav a:hover {
+    transform: translateY(-5px);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #28d448, orange) 1;
+    background: linear-gradient(to right, green, orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Navegador {
+    display: flex;
+    gap: 40px;
+}
+
+/* Link Nav Whatsapp */
+.BtnWhatsAppNav {
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: #28d448;
+    color: #ffffff !important;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 15px;
+    transition: 0.2s ease-in;
+    -webkit-text-fill-color: initial !important; /* overrides hover clip */
+}
+
+.BtnWhatsAppNav:hover {
+    background-color: white !important;
+    border: 2px solid #28d448;
+    color: #28d448 !important;
+    transform: scale(1.05);
+    background: none !important;
+}
+
+main {
+    display: flex;
+    background-image: url(assets/mainimg.jpeg); /* Caminho da sua foto */
+    background-color: #1a1a1a;
+    width: 100%;
+    min-height: 90vh;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    filter: grayscale(70%);
+    transition: 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+main:hover {
+    filter: grayscale(0%);
+}
+
+.MainInfo {
+    padding: 10px;
+    position: absolute;
+    margin-left: 11%;
+    margin-top: 8%;
+    background: rgba(255, 255, 255, 0.85); /* Fundo suave para não sumir no mobile */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.MainInfo h2 { font-weight: bolder; font-size: 50px; }
+.MainInfo span { color: #28d448; }
+.LegendaMain { font-weight: lighter; font-size: 18px; margin-top: 15px; }
+
+.IconsFigureImfo {
+    border-top: 2px solid;
+    border-image: linear-gradient(to right, #28d448, orange) 1;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin-top: 20px;
+    justify-content: space-around;
+    font-size: 12px;
+    text-align: center;
+    transition: 0.2s ease-in;
+}
+
+.FigureBox {
+    padding: 10px;
+    transition: 0.2s ease-in;
+    border-bottom: 2px solid transparent;
+}
+
+.FigureBox:hover {
+    transform: translateY(-10px);
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #28d448, orange) 1;
+}
+
+.BtnMainBox {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Botão principal virou Link */
+.BtnMainAction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px 30px;
+    background-color: orange;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bolder;
+    color: black !important;
+    transition: 0.2s ease-in;
+}
+
+.BtnMainAction:hover {
+    background: none;
+    border: 2px solid orange;
+    color: orange !important;
+    transform: translateY(-2px);
+}
+
+.BtnMainAction span{
+color: #1a1a1a;
+transition: 0.2 ease-in;
+}
+
+.BtnMainAction:hover span { color: orange; }
+
+.MainInfo h6 {
+    text-align: center;
+    color: gray;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+#iconSecuranca {
+    background: linear-gradient(to right, green, orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.InconEnd {
+    background: linear-gradient(to right, green, orange);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border-radius: 50%;
+    animation: descerSubir 2s ease-in-out infinite;
+    color: white;
+}
+
+@keyframes descerSubir {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 20px); }
+}
+
+/* Segunda Tela  */
+.SecondScreen {
+    background-color: #fafdff;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.InfosProdutos {
+    background-color: #55e060;
+    padding: 50px 20px;
+}
+
+.CardsBox {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.Cards {
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 25px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 15px;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.Cards span { font-weight: bolder; font-size: 20px; margin: 10px 0;}
+#iconmaior { font-size: 50px; color: #28d448;}
+
+.Cards:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-color: #28d448;
+}
+
+.Cárdapio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.Ttitle { display: flex; flex-direction: column; align-items: center; }
+.Ttitle h4 { display: flex; justify-content: center; align-items: center; gap: 5px; font-size: 20px; }
+h4 span { color: orange; font-weight: bolder; font-size: 25px; }
+#iconMarmitasMaior { color: #28d448; font-size: 35px; }
+
+.Ttitle p {
+    padding: 10px 40px;
+    font-size: 18px;
+    color: #28d448;
+    font-weight: bold;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #28d448, orange) 1;
+    margin-bottom: 20px;
+}
+
+.MarmitasSliderContainer {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+.MarmitasMainBox {
+    display: inline-flex;
+    gap: 30px;
+    width: max-content;
+    animation: rolarSlider 30s linear infinite;
+}
+
+.MarmitasSliderContainer:hover .MarmitasMainBox {
+    animation-play-state: paused;
+}
+
+.MarmitaBox {
+    width: 250px;
+    background: white;
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s ease;
+}
+
+.MarmitaBox img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: grayscale(90%);
+    transition: 0.3s ease;
+}
+
+.MarmitaBox span { font-weight: bold; font-size: 18px; }
+.Beneficio {
+    background-color: #e8f5e9;
+    color: #2e5a36;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+/* Botões do slider viraram Links */
+.HiddenBtn {
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid orange;
+    color: orange !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: bolder;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+}
+
+.HiddenBtn:hover {
+    background-color: orange;
+    color: white !important;
+}
+
+.MarmitaBox:hover {
+    transform: translateY(-15px);
+    border-image: linear-gradient(to right, #28d448, orange) 1;
+}
+
+.MarmitaBox:hover img { filter: grayscale(0%); }
+.MarmitaBox:hover .namemarmita {
+    background: linear-gradient(to right, green, orange);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes rolarSlider {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.VerCardapioCompleto { display: flex; justify-content: center; margin-top: 30px; }
+.VerCardapioCompleto a {
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 15px 30px;
+    border-radius: 12px;
+    border: 2px solid #28d448;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #28d448;
+    transition: 0.3s;
+}
+
+.VerCardapioCompleto a:hover {
+    background-color: #28d448;
+    color: white;
+}
+
+.Reviews {
+    background-color: orange;
+    padding: 50px 20px;
+}
+
+.Reviews h4 { text-align: center; font-size: 28px; margin-bottom: 30px; color: white;}
+
+.review {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.reviewbox1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    min-width: 200px;
+}
+
+.reviewbox1 span.material-symbols-outlined { font-size: 40px; }
+.text1212 { margin-top: 5px; font-weight: bolder; font-size: 24px; }
+
+.coments {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    max-width: 300px;
+    text-align: center;
+}
+
+.coments span.material-symbols-outlined { font-size: 40px; color: orange;}
+#nomecoments { margin-top: 15px; font-size: 16px; font-weight: bolder; color: #28d448;}
+
+.coments:hover { transform: translateY(-10px); }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    align-items: center;
+}
+footer h6 { color: rgba(255,255,255,0.6); margin-bottom: 10px;}
+.marcadagua { font-size: 18px; letter-spacing: 5px; color: #555;}
+
+
+.titulo{
+text-transform: uppercase;
+font-size: 20px;
+}
+
+.LegendaMain{
+    text-transform: lowercase;
+    text-align: start;
+}
+
+
+/* ==================================================
+   NOVAS CLASSES: ANIMAÇÃO DE FADE-IN
+================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.MarmitaBox a{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 5px;
+padding: 15px;
+border: 2px solid orange;
+border-radius: 12px;
+color: orange;
+font-weight: bolder;
+transition: 0.2s ease-in-out;
+}
+
+.MarmitaBox a:hover{
+background-color: orange;
+color: black;
+
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE - ADAPTAÇÃO PARA CELULAR (MOBILE)
+================================================== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .LegendaMain{
+        text-align: center;
+    
+}
+
+    .BtnWhatsAppNav{
+        display: none;
+    }
+
+    .Navegador {
+        display: none;
+        
+    }
+
+    main {
+        background-position: 70% center; /* Ajusta foco da imagem */
+    }
+
+    .MainInfo {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 15%;
+        padding: 20px;
+        text-align: center; /* Centraliza tudo no mobile */
+    }
+
+    .MainInfo h2 {
+        font-size: 32px;
+    }
+
+    .IconsFigureImfo {
+        flex-wrap: wrap; /* Permite que os ícones quebrem linha */
+        gap: 15px;
+    }
+
+    .FigureBox {
+        width: 45%; /* 2 ícones por linha */
+    }
+
+    .CardsBox {
+        flex-direction: column; /* Empilha os cards de vantagens */
+        align-items: center;
+    }
+
+    .Cards {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .InconEnd {
+        display: none; /* Esconde a setinha no mobile pra não atrapalhar a leitura */
+    }
+
+    .review {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reviewbox1, .coments {
+        width: 100%;
+        max-width: 350px;
+    }
+}
