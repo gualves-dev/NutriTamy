@@ -665,9 +665,14 @@ footer h6 {
     }
 
     nav {
+        position: fixed; /* Trava o menu na tela */
+        top: 0;
+        left: 0;
+        width: 100%;
         flex-direction: column;
         gap: 15px;
         padding: 15px;
+        z-index: 9999; /* Fica por cima de tudo no site */
     }
 
     .LegendaMain {
@@ -683,6 +688,7 @@ footer h6 {
     }
 
     main {
+        margin-top: 55px;
         filter: grayscale(0%);
         background-position: 70% center;
         height: auto;
