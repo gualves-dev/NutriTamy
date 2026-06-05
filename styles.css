@@ -657,6 +657,13 @@ footer h6 {
    RESPONSIVIDADE - ADAPTAÇÃO PARA CELULAR (MOBILE)
 ================================================== */
 @media (max-width: 768px) {
+    
+    /* CORREÇÃO GLOBAL PARA BLOQUEAR VAZAMENTOS DE TELA */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
     nav {
         flex-direction: column;
         gap: 15px;
@@ -736,14 +743,14 @@ footer h6 {
 
     /* Diminui o texto do cardápio no celular */
     h4.diminuirtexto {
-        font-size: 16px !important; /* Ajuste o número se quiser maior ou menor */
+        font-size: 16px !important;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 5px;
     }
 
-    /* Garante que o texto em destaque (laranja) também acompanhe o tamanho menor */
+    /* Garante que o texto em destaque também acompanhe o tamanho menor */
     h4.diminuirtexto span {
         font-size: 16px !important; 
     }
@@ -751,5 +758,21 @@ footer h6 {
     /* Mantém o ícone de check proporcional */
     h4.diminuirtexto #iconMarmitasMaior {
         font-size: 20px !important;
+    }
+
+    /* AJUSTES CRÍTICOS PARA A SEÇÃO DE REVIEWS NÃO QUEBRAR O FUNDO LARANJA */
+    .Reviews {
+        width: 100%;
+        overflow: hidden; /* Elimina rebarbas invisíveis que puxam a tela para baixo */
+    }
+
+    .reviewbox1 {
+        min-width: 100% !important; /* Faz a caixinha amarela respeitar as bordas do celular */
+        box-sizing: border-box;
+    }
+
+    .coments {
+        max-width: 90% !important; /* Impede os balões de depoimentos de estourarem a largura */
+        margin: 0 auto;
     }
 }
