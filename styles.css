@@ -8,7 +8,8 @@
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Previne quebras de layout */
+    box-sizing: border-box;
+    /* Previne quebras de layout */
 }
 
 html {
@@ -27,6 +28,7 @@ a {
     left: 0;
     width: 100%;
     height: 100vh;
+    min-height: 100vh;
     background-color: #fafdff;
     display: flex;
     justify-content: center;
@@ -54,12 +56,19 @@ a {
 }
 
 @keyframes desenharContorno {
-    to { stroke-dashoffset: 0; }
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
 @keyframes surgirFundoSuave {
-    from { fill-opacity: 0; }
-    to { fill-opacity: 1; }
+    from {
+        fill-opacity: 0;
+    }
+
+    to {
+        fill-opacity: 1;
+    }
 }
 
 /* SITE MAIN  */
@@ -73,7 +82,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
@@ -121,7 +130,8 @@ nav a:hover {
     gap: 5px;
     padding: 7px 15px;
     transition: 0.2s ease-in;
-    -webkit-text-fill-color: initial !important; /* overrides hover clip */
+    -webkit-text-fill-color: initial !important;
+    /* overrides hover clip */
 }
 
 .BtnWhatsAppNav:hover {
@@ -134,7 +144,8 @@ nav a:hover {
 
 main {
     display: flex;
-    background-image: url(assets/mainimg.jpeg); /* Caminho da sua foto */
+    background-image: url(assets/mainimg.jpeg);
+    /* Caminho da sua foto */
     background-color: #1a1a1a;
     width: 100%;
     min-height: 90vh;
@@ -156,15 +167,24 @@ main:hover {
     position: absolute;
     margin-left: 11%;
     margin-top: 8%;
-    background: rgba(255, 255, 255, 0.85); /* Fundo suave para não sumir no mobile */
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.MainInfo h2 { font-weight: bolder; font-size: 50px; }
-.MainInfo span { color: #28d448; }
-.LegendaMain { font-weight: lighter; font-size: 18px; margin-top: 15px; }
+.MainInfo h2 {
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.MainInfo span {
+    color: #28d448;
+}
+
+.LegendaMain {
+    font-weight: lighter;
+    font-size: 18px;
+    margin-top: 15px;
+}
 
 .IconsFigureImfo {
     border-top: 2px solid;
@@ -186,7 +206,9 @@ main:hover {
 }
 
 .FigureBox:hover {
-    transform: translateY(-10px);
+    transition: 0.2s ease-in-out;
+    translate: 0 -10px;
+    /* Move 0 no eixo X e -10px no eixo Y */
     border-bottom: 2px solid;
     border-image: linear-gradient(to right, #28d448, orange) 1;
 }
@@ -220,12 +242,14 @@ main:hover {
     transform: translateY(-2px);
 }
 
-.BtnMainAction span{
-color: #1a1a1a;
-transition: 0.2 ease-in;
+.BtnMainAction span {
+    color: #1a1a1a;
+    transition: 0.2s ease-in;
 }
 
-.BtnMainAction:hover span { color: orange; }
+.BtnMainAction:hover span {
+    color: orange;
+}
 
 .MainInfo h6 {
     text-align: center;
@@ -257,8 +281,14 @@ transition: 0.2 ease-in;
 }
 
 @keyframes descerSubir {
-    0%, 100% { transform: translate(-50%, 0); }
-    50% { transform: translate(-50%, 20px); }
+    0%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, 20px);
+    }
 }
 
 /* Segunda Tela  */
@@ -288,18 +318,27 @@ transition: 0.2 ease-in;
     flex-direction: column;
     text-align: center;
     padding: 30px 25px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     transition: 0.4s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.Cards span { font-weight: bolder; font-size: 20px; margin: 10px 0;}
-#iconmaior { font-size: 50px; color: #28d448;}
+.Cards span {
+    font-weight: bolder;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+#iconmaior {
+    font-size: 50px;
+    color: #28d448;
+}
 
 .Cards:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: 0.2s ease-in-out;
+    translate: 0 -15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     border-color: #28d448;
 }
 
@@ -310,10 +349,30 @@ transition: 0.2 ease-in;
     padding-top: 50px;
 }
 
-.Ttitle { display: flex; flex-direction: column; align-items: center; }
-.Ttitle h4 { display: flex; justify-content: center; align-items: center; gap: 5px; font-size: 20px; }
-h4 span { color: orange; font-weight: bolder; font-size: 25px; }
-#iconMarmitasMaior { color: #28d448; font-size: 35px; }
+.Ttitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Ttitle h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 20px;
+}
+
+h4 span {
+    color: orange;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#iconMarmitasMaior {
+    color: #28d448;
+    font-size: 35px;
+}
 
 .Ttitle p {
     padding: 10px 40px;
@@ -337,10 +396,6 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
     gap: 30px;
     width: max-content;
     animation: rolarSlider 30s linear infinite;
-}
-
-.MarmitasSliderContainer:hover .MarmitasMainBox {
-    animation-play-state: paused;
 }
 
 .MarmitaBox {
@@ -367,7 +422,11 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
     transition: 0.3s ease;
 }
 
-.MarmitaBox span { font-weight: bold; font-size: 18px; }
+.MarmitaBox span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .Beneficio {
     background-color: #e8f5e9;
     color: #2e5a36;
@@ -403,7 +462,10 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
     border-image: linear-gradient(to right, #28d448, orange) 1;
 }
 
-.MarmitaBox:hover img { filter: grayscale(0%); }
+.MarmitaBox:hover img {
+    filter: grayscale(0%);
+}
+
 .MarmitaBox:hover .namemarmita {
     background: linear-gradient(to right, green, orange);
     -webkit-background-clip: text;
@@ -412,11 +474,21 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
 }
 
 @keyframes rolarSlider {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
-.VerCardapioCompleto { display: flex; justify-content: center; margin-top: 30px; }
+.VerCardapioCompleto {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .VerCardapioCompleto a {
     font-size: 18px;
     font-weight: bolder;
@@ -440,7 +512,12 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
     padding: 50px 20px;
 }
 
-.Reviews h4 { text-align: center; font-size: 28px; margin-bottom: 30px; color: white;}
+.Reviews h4 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: white;
+}
 
 .review {
     display: flex;
@@ -455,7 +532,7 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     padding: 20px;
     border-radius: 15px;
     display: flex;
@@ -466,8 +543,15 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
     min-width: 200px;
 }
 
-.reviewbox1 span.material-symbols-outlined { font-size: 40px; }
-.text1212 { margin-top: 5px; font-weight: bolder; font-size: 24px; }
+.reviewbox1 span.material-symbols-outlined {
+    font-size: 40px;
+}
+
+.text1212 {
+    margin-top: 5px;
+    font-weight: bolder;
+    font-size: 24px;
+}
 
 .coments {
     background: white;
@@ -475,16 +559,27 @@ h4 span { color: orange; font-weight: bolder; font-size: 25px; }
     flex-direction: column;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     max-width: 300px;
     text-align: center;
 }
 
-.coments span.material-symbols-outlined { font-size: 40px; color: orange;}
-#nomecoments { margin-top: 15px; font-size: 16px; font-weight: bolder; color: #28d448;}
+.coments span.material-symbols-outlined {
+    font-size: 40px;
+    color: orange;
+}
 
-.coments:hover { transform: translateY(-10px); }
+#nomecoments {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: #28d448;
+}
+
+.coments:hover {
+    transform: translateY(-10px);
+}
 
 footer {
     display: flex;
@@ -494,20 +589,27 @@ footer {
     padding: 20px;
     align-items: center;
 }
-footer h6 { color: rgba(255,255,255,0.6); margin-bottom: 10px;}
-.marcadagua { font-size: 18px; letter-spacing: 5px; color: #555;}
 
-
-.titulo{
-text-transform: uppercase;
-font-size: 20px;
+footer h6 {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
 }
 
-.LegendaMain{
+.marcadagua {
+    font-size: 18px;
+    letter-spacing: 5px;
+    color: #555;
+}
+
+.titulo {
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.LegendaMain {
     text-transform: lowercase;
     text-align: start;
 }
-
 
 /* ==================================================
    NOVAS CLASSES: ANIMAÇÃO DE FADE-IN
@@ -523,25 +625,33 @@ font-size: 20px;
     transform: translateY(0);
 }
 
-.MarmitaBox a{
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 5px;
-padding: 15px;
-border: 2px solid orange;
-border-radius: 12px;
-color: orange;
-font-weight: bolder;
-transition: 0.2s ease-in-out;
+.MarmitaBox a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 15px;
+    border: 2px solid orange;
+    border-radius: 12px;
+    color: orange;
+    font-weight: bolder;
+    transition: 0.2s ease-in-out;
 }
 
-.MarmitaBox a:hover{
-background-color: orange;
-color: black;
-
+.MarmitaBox a:hover {
+    background-color: orange;
+    color: black;
 }
 
+/* ==================================================
+   REGRAS EXCLUSIVAS PARA COMPUTADORES (PC)
+================================================== */
+@media (hover: hover) {
+    /* Trava a animação ao passar o mouse APENAS se houver ponteiro real */
+    .MarmitasSliderContainer:hover .MarmitasMainBox {
+        animation-play-state: paused;
+    }
+}
 
 /* ==================================================
    RESPONSIVIDADE - ADAPTAÇÃO PARA CELULAR (MOBILE)
@@ -553,66 +663,93 @@ color: black;
         padding: 15px;
     }
 
-    .LegendaMain{
+    .LegendaMain {
         text-align: center;
-    
-}
+    }
 
-    .BtnWhatsAppNav{
+    .BtnWhatsAppNav {
         display: none;
     }
 
     .Navegador {
         display: none;
-        
     }
 
     main {
-        background-position: 70% center; /* Ajusta foco da imagem */
+        filter: grayscale(0%);
+        background-position: 70% center;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 10px;
     }
 
     .MainInfo {
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-top: 15%;
+        position: relative;
+        margin: 0 auto;
+        width: 92%;
+        top: 0;
+        left: 0;
         padding: 20px;
-        text-align: center; /* Centraliza tudo no mobile */
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.85);
     }
 
     .MainInfo h2 {
-        font-size: 32px;
+        font-size: 28px;
     }
 
     .IconsFigureImfo {
-        flex-wrap: wrap; /* Permite que os ícones quebrem linha */
+        flex-wrap: wrap;
         gap: 15px;
     }
 
     .FigureBox {
-        width: 45%; /* 2 ícones por linha */
+        width: 45%;
     }
 
     .CardsBox {
-        flex-direction: column; /* Empilha os cards de vantagens */
+        flex-direction: column;
         align-items: center;
-    }
-
-    .Cards {
-        width: 100%;
-        max-width: 350px;
+        gap: 20px;
     }
 
     .InconEnd {
-        display: none; /* Esconde a setinha no mobile pra não atrapalhar a leitura */
+        display: none;
     }
 
-    .review {
-        flex-direction: column;
+    /* Ajustes do Slider para o Celular */
+    .MarmitasSliderContainer {
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    /* Força o slide a rodar continuamente mesmo com cliques no Mobile */
+    .MarmitasSliderContainer .MarmitasMainBox,
+    .MarmitasSliderContainer:hover .MarmitasMainBox {
+        animation-play-state: running !important;
+    }
+
+    /* Diminui o texto do cardápio no celular */
+    h4.diminuirtexto {
+        font-size: 16px !important; /* Ajuste o número se quiser maior ou menor */
+        display: flex;
         align-items: center;
+        justify-content: center;
+        gap: 5px;
     }
 
-    .reviewbox1, .coments {
-        width: 100%;
-        max-width: 350px;
+    /* Garante que o texto em destaque (laranja) também acompanhe o tamanho menor */
+    h4.diminuirtexto span {
+        font-size: 16px !important; 
+    }
+
+    /* Mantém o ícone de check proporcional */
+    h4.diminuirtexto #iconMarmitasMaior {
+        font-size: 20px !important;
     }
 }
